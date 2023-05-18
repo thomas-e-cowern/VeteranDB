@@ -11,6 +11,8 @@
 		4D4817082A166C0000EA0C19 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D4817072A166C0000EA0C19 /* ContentView.swift */; };
 		4D48170A2A166C0200EA0C19 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4D4817092A166C0200EA0C19 /* Assets.xcassets */; };
 		4D48170D2A166C0200EA0C19 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4D48170C2A166C0200EA0C19 /* Preview Assets.xcassets */; };
+		4D4817172A1692B600EA0C19 /* LoginService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D4817162A1692B600EA0C19 /* LoginService.swift */; };
+		4D48171A2A16AA2E00EA0C19 /* SwiftKeychainWrapper in Frameworks */ = {isa = PBXBuildFile; productRef = 4D4817192A16AA2E00EA0C19 /* SwiftKeychainWrapper */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -21,6 +23,7 @@
 		4D48170C2A166C0200EA0C19 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		4D4817132A16709A00EA0C19 /* Config.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Config.xcconfig; sourceTree = "<group>"; };
 		4D4817142A16710200EA0C19 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		4D4817162A1692B600EA0C19 /* LoginService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginService.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -28,6 +31,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4D48171A2A16AA2E00EA0C19 /* SwiftKeychainWrapper in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -56,6 +60,7 @@
 				4D4817142A16710200EA0C19 /* Info.plist */,
 				4D4817052A166C0000EA0C19 /* VeteranDBApp.swift */,
 				4D4817072A166C0000EA0C19 /* ContentView.swift */,
+				4D4817152A16924B00EA0C19 /* Services */,
 				4D4817132A16709A00EA0C19 /* Config.xcconfig */,
 				4D4817092A166C0200EA0C19 /* Assets.xcassets */,
 				4D48170B2A166C0200EA0C19 /* Preview Content */,
@@ -69,6 +74,14 @@
 				4D48170C2A166C0200EA0C19 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		4D4817152A16924B00EA0C19 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				4D4817162A1692B600EA0C19 /* LoginService.swift */,
+			);
+			path = Services;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -87,6 +100,9 @@
 			dependencies = (
 			);
 			name = VeteranDB;
+			packageProductDependencies = (
+				4D4817192A16AA2E00EA0C19 /* SwiftKeychainWrapper */,
+			);
 			productName = VeteranDB;
 			productReference = 4D4817022A166C0000EA0C19 /* VeteranDB.app */;
 			productType = "com.apple.product-type.application";
@@ -115,6 +131,9 @@
 				Base,
 			);
 			mainGroup = 4D4816F92A166C0000EA0C19;
+			packageReferences = (
+				4D4817182A16AA2E00EA0C19 /* XCRemoteSwiftPackageReference "SwiftKeychainWrapper" */,
+			);
 			productRefGroup = 4D4817032A166C0000EA0C19 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -142,6 +161,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				4D4817082A166C0000EA0C19 /* ContentView.swift in Sources */,
+				4D4817172A1692B600EA0C19 /* LoginService.swift in Sources */,
 				4D4817062A166C0000EA0C19 /* VeteranDBApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -347,6 +367,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		4D4817182A16AA2E00EA0C19 /* XCRemoteSwiftPackageReference "SwiftKeychainWrapper" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/jrendel/SwiftKeychainWrapper";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 4.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		4D4817192A16AA2E00EA0C19 /* SwiftKeychainWrapper */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 4D4817182A16AA2E00EA0C19 /* XCRemoteSwiftPackageReference "SwiftKeychainWrapper" */;
+			productName = SwiftKeychainWrapper;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 4D4816FA2A166C0000EA0C19 /* Project object */;
 }

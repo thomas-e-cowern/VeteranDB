@@ -27,14 +27,15 @@ struct ContentView: View {
 
             VStack {
                 TextField("Email", text: $email)
+                    .textCase(.lowercase)
                 TextField("Password", text: $password)
             }
             .textFieldStyle(.roundedBorder)
             .padding()
 
             Button("Login") {
-                print("Email: \($email.wrappedValue)")
-                print("Password: \($password.wrappedValue)")
+                
+                LoginService().Login(email: email.lowercased(), password: password)
             }
             .buttonStyle(.borderedProminent)
             Spacer()
