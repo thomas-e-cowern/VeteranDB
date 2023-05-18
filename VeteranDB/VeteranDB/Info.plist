@@ -7,6 +7,6 @@
 	<key>BEARER_TOKEN</key>
 	<string>$(BEARER_TOKEN)</string>
 	<key>VETERANDB_ACCESS_COOKIE</key>
-	<string></string>
+	<string>$(VETERANDB_ACCESS_COOKIE)</string>
 </dict>
 </plist>
