@@ -11,12 +11,33 @@ struct ContentView: View {
     
     let apiKey = (Bundle.main.infoDictionary?["API_KEY"] as? String)!
     
+    @State private var email: String = ""
+    @State private var password: String = ""
+    
     var body: some View {
         VStack {
-            Image(systemName: "globe")
-                .imageScale(.large)
-                .foregroundColor(.accentColor)
-            Text(apiKey)
+            Image("logo-green")
+                .resizable()
+                .scaledToFit()
+            
+            Spacer()
+            
+            Text("Login")
+                .font(.title)
+
+            VStack {
+                TextField("Email", text: $email)
+                TextField("Password", text: $password)
+            }
+            .textFieldStyle(.roundedBorder)
+            .padding()
+
+            Button("Login") {
+                print("Email: \($email.wrappedValue)")
+                print("Password: \($password.wrappedValue)")
+            }
+            .buttonStyle(.borderedProminent)
+            Spacer()
         }
         .padding()
     }
