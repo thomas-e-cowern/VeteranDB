@@ -91,4 +91,7 @@ iOSInjectionProject/
 
 # Config file for API Keys and the like
 
-VeteranDB/Config.xcconfig
+VeteranDB/VeteranDB/Config.xcconfig
+
+# DS_Store
+.DS_Store
