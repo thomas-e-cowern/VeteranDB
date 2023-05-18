@@ -91,4 +91,4 @@ iOSInjectionProject/
 
 # Config file for API Keys and the like
 
-Config.xcconfig
+VeteranDB/Config.xcconfig
