@@ -93,5 +93,6 @@ iOSInjectionProject/
 
 VeteranDB/VeteranDB/Config.xcconfig
 
-# DS_Store
-.DS_Store
+# .DS_Store
+VeteranDB/.DS_Store
+VeteranDB/VeteranDB/.DS_Store
