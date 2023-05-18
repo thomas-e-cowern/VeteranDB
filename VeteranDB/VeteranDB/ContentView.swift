@@ -8,12 +8,15 @@
 import SwiftUI
 
 struct ContentView: View {
+    
+    let apiKey = (Bundle.main.infoDictionary?["API_KEY"] as? String)!
+    
     var body: some View {
         VStack {
             Image(systemName: "globe")
                 .imageScale(.large)
                 .foregroundColor(.accentColor)
-            Text("Hello, world!")
+            Text(apiKey)
         }
         .padding()
     }
