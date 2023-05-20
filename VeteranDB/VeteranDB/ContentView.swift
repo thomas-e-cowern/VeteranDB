@@ -14,33 +14,49 @@ struct ContentView: View {
     @State private var email: String = ""
     @State private var password: String = ""
     
+    @State private var isValid: Bool = false
+    @State var isAuthenticated: Bool = false
+    
     var body: some View {
-        VStack {
-            Image("logo-green")
-                .resizable()
-                .scaledToFit()
-            
-            Spacer()
-            
-            Text("Login")
-                .font(.title)
-
+        NavigationStack {
             VStack {
-                TextField("Email", text: $email)
-                    .textCase(.lowercase)
-                TextField("Password", text: $password)
-            }
-            .textFieldStyle(.roundedBorder)
-            .padding()
-
-            Button("Login") {
+                Image("logo-green")
+                    .resizable()
+                    .scaledToFit()
                 
-                LoginService().Login(email: email.lowercased(), password: password)
+                Spacer()
+                
+                Text("Login")
+                    .font(.title)
+                
+                VStack {
+                    TextField("Email", text: $email)
+                        .textCase(.lowercase)
+                    TextField("Password", text: $password)
+                }
+                .textFieldStyle(.roundedBorder)
+                .padding()
+                
+                Button("Login") {
+                    
+                    isValid = LoginService().Login(email: email.lowercased(), password: password)
+                    print(isValid)
+                    if isValid {
+                        isAuthenticated = true
+                    }
+                }
+                .buttonStyle(.borderedProminent)
+                
+                
+                
+                Spacer()
             }
-            .buttonStyle(.borderedProminent)
-            Spacer()
+            .padding()
+            .navigationDestination(isPresented: $isAuthenticated) {
+                Text("You made it")
+            }
         }
-        .padding()
+        
     }
 }
 

@@ -16,6 +16,7 @@ class LoginService {
     
     private var bearer_token: String = ""
     private var veteranDB_access_cookie: String = ""
+    private var isValid: Bool = false
     
     func Login(email: String, password: String) {
         
@@ -53,6 +54,7 @@ class LoginService {
             do {
                 let loginResponse = try JSONDecoder().decode(ResponseData.self, from: data)
                 print(loginResponse.data["access_token"] as Any)
+                self.isValid = true
             } catch {
                 print(error)
                 fatalError(error.localizedDescription)
@@ -60,9 +62,7 @@ class LoginService {
         }
         
         task.resume()
-
-
-        
+    
     }
     
 }
