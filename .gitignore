@@ -97,3 +97,6 @@ VeteranDB/VeteranDB/Config.xcconfig
 .DS_Store
 VeteranDB/.DS_Store
 VeteranDB/VeteranDB/.DS_Store
+
+# Constatns file
+VeteranDB/VeteranDB/Utilities/Constants.swift
